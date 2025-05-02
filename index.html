@@ -118,7 +118,7 @@ h1, h2 {
 <body>
 
 
-  <div id="home">
+ <div id="home" class="page">
     <h1>Welcome to My Website</h1>
     <p>This is the homepage content.</p>
       <div class="taskbar">
@@ -135,7 +135,8 @@ h1, h2 {
   </div>
 
 
-  <div id="gxmes">
+ 
+<div id="gxmes" class="page">
     <h1>About Us</h1>
     <p>This is the about page content.</p>
      <div class="taskbar">
@@ -152,7 +153,7 @@ h1, h2 {
   </div>
 
 
-  <div id="files">
+<div id="files" class="page">
     <h1>Contact Us</h1>
     <p>sigma</p>
        <div class="taskbar">
@@ -169,7 +170,7 @@ h1, h2 {
     
   </div>
   
-    <div id="browse">
+ <div id="browse" class="page">
     <h1>Contact Us</h1>
     <p>This is the contact page content.</p>
        <div class="taskbar">
@@ -186,13 +187,16 @@ h1, h2 {
       
   </div>
 
-  <script>
-    function showPage(pageId) {
-      const pages = document.querySelectorAll('div');
-      pages.forEach(page => page.style.display = 'none');
-      document.getElementById(pageId).style.display = 'block';
-    }
-    showPage('home');
-  </script>
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.style.display = 'none');
+    document.getElementById(pageId).style.display = 'block';
+  }
+
+
+  showPage('home');
+</script>
+
 </body>
 </html>
