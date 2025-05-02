@@ -119,8 +119,8 @@ h1, h2 {
 
 
  <div id="home" class="page">
-    <h1>Welcome to My Website</h1>
-    <p>This is the homepage content.</p>
+    <h1>Welcome to ChickenOS Lite</h1>
+    <p>You can run ChickenOS now in one single HTML file</p>
       <div class="taskbar">
     <div class="taskbar-icons">
   
@@ -137,7 +137,7 @@ h1, h2 {
 
  
 <div id="gxmes" class="page">
-    <h1>About Us</h1>
+    <h1>Games To play</h1>
     <p>This is the about page content.</p>
      <div class="taskbar">
     <div class="taskbar-icons">
@@ -154,8 +154,110 @@ h1, h2 {
 
 
 <div id="files" class="page">
-    <h1>Contact Us</h1>
-    <p>sigma</p>
+    <h1>View Files</h1>
+    
+    <input type="file" id="fileInput" accept="image/*, .html, .pdf, .txt, .mp4, .webm, .ogg">
+    <div id="fileDisplayArea"></div>
+  
+    <script>
+      
+      const fileInput = document.getElementById("fileInput");
+      const fileDisplayArea = document.getElementById("fileDisplayArea");
+  
+      
+      fileInput.addEventListener("change", handleFileSelect, false);
+  
+      
+      function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const fileType = file.type;
+          const reader = new FileReader(); 
+  
+          
+          fileDisplayArea.innerHTML = '';
+  
+          
+          if (fileType.startsWith("image/")) {
+            renderImage(file);
+          } else if (fileType === "text/html") {
+            renderHTML(file);
+          } else if (fileType === "application/pdf") {
+            renderPDF(file);
+          } else if (fileType.startsWith("video/")) {
+            renderVideo(file);
+          } else if (fileType === "text/plain") {
+            renderText(file);
+          } else {
+            fileDisplayArea.innerHTML = "Unsupported file type!";
+          }
+        }
+      }
+  
+      
+      function renderImage(file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const img = document.createElement("img");
+          img.src = event.target.result;
+          img.style.maxWidth = "100%"; 
+          fileDisplayArea.appendChild(img);
+        };
+        reader.readAsDataURL(file); 
+      }
+  
+     
+      function renderHTML(file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const iframe = document.createElement("iframe");
+          iframe.srcdoc = event.target.result; 
+          iframe.style.width = "100%";
+          iframe.style.height = "500px"; 
+          fileDisplayArea.appendChild(iframe);
+        };
+        reader.readAsText(file); 
+      }
+  
+      
+      function renderPDF(file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const pdfData = event.target.result;
+          const pdfIframe = document.createElement("iframe");
+          pdfIframe.src = URL.createObjectURL(new Blob([pdfData], {type: 'application/pdf'}));
+          pdfIframe.style.width = "100%";
+          pdfIframe.style.height = "500px"; 
+          fileDisplayArea.appendChild(pdfIframe);
+        };
+        reader.readAsArrayBuffer(file); 
+      }
+  
+      
+      function renderVideo(file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const video = document.createElement("video");
+          video.src = event.target.result;
+          video.controls = true; 
+          video.style.maxWidth = "100%"; 
+          fileDisplayArea.appendChild(video);
+        };
+        reader.readAsDataURL(file); 
+      }
+  
+      
+      function renderText(file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const pre = document.createElement("pre");
+          pre.textContent = event.target.result; 
+          fileDisplayArea.appendChild(pre);
+        };
+        reader.readAsText(file); 
+      }
+      // this was too hard for me to code so chatgpt heehee ^
+    </script>
        <div class="taskbar">
     <div class="taskbar-icons">
   
