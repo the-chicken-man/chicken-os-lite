@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChickenOS Lite</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #1e1e2f;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    .taskbar {
+      height: 40px;
+      width: 98.5%;
+      background-color: #202020;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.4);
+    }
+
+    .start-button {
+      background: #0078D7;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .taskbar-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .taskbar-icons img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .clock {
+      font-size: 14px;
+    } 
+body {
+  background-color: black;
+  color: yellow;
+  font-family: Courier New, monospace;;
+}
+h1 {
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+}
+button {
+  background-color: black;
+  border: yellow;
+  color: yellow;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+}
+.sigma-btn {
+  background-color: black;
+  border: 2px solid yellow;
+  color: yellow;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Share Tech Mono', monospace;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 0 5px yellow;
+  box-shadow: 0 0 10px yellow inset;
+}
+
+.sigma-btn:hover {
+  background-color: yellow;
+  color: black;
+  box-shadow: 0 0 20px yellow;
+  text-shadow: none;
+}
+h1, h2 {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  </style>
+  <meta
+  name="description"
+  content="ChickenOS is an online OS with games, files,browsers and more"
+/>
+<meta
+  name="keywords"
+  content="Browser, web OS, ChickenOS, service workers, games, unblock, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked, unblocked games, chickenOS"
+/>
+<meta
+  name="theme-color"
+  media="(prefers-color-scheme: dark)"
+  content="#000000"
+/>
+<meta name="googlebot" content="index, follow, snippet" />
+</head>
+<body>
+  <nav>
+<button onclick="showPage('home')">  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/folder-invoices--v1.png" alt="File Explorer"<button onclick="showPage('home')">Home</button>>
+    <button onclick="showPage('gxmes')">Games</button>
+    <button onclick="showPage('files')">Files</button>
+    <button onclick="showPage('browse')">Browse</button>
+  </nav>
+
+
+  <div id="home">
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage content.</p>
+  </div>
+
+
+  <div id="gxmes">
+    <h1>About Us</h1>
+    <p>This is the about page content.</p>
+  </div>
+
+
+  <div id="files">
+    <h1>Contact Us</h1>
+    <p>This is the contact page content.</p>
+  </div>
+  
+    <div id="files">
+    <h1>Contact Us</h1>
+    <p>This is the contact page content.</p>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('div');
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+    showPage('home');
+  </script>
+</body>
+</html>
