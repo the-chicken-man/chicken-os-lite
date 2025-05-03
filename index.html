@@ -145,7 +145,7 @@ h1, h2 {
  
 <div id="gxmes" class="page">
     <h1>Games To play</h1>
-    <div class="sigma-btn"> <button onclick="showPage('1v1lol')">1v1.lol</button></div>
+    <div class="sigma-btn"> <button onclick="showPage('60burger')">60 Second Burger Run</button></div>
    
     </div>
      
@@ -270,11 +270,9 @@ h1, h2 {
  <script src="https://chicken-os.pages.dev/apps/js/clock.js"></script>
       
   </div>
-  
-  <div id="1v1lol" class="page">
-
-    <script>
-        fetch('https://raw.githubusercontent.com/the-chicken-man/chicken-os/refs/heads/main/apps/games/1v1lol.html')
+   <div id="60burger" class="page">
+  <script>
+        fetch('https://raw.githubusercontent.com/the-chicken-man/chicken-os/refs/heads/main/apps/games/60sbrgrrn.html')
             .then(response => response.text())
             .then(html => {
                 document.open();
@@ -286,7 +284,9 @@ h1, h2 {
                 document.body.innerHTML = '<h1>Failed to load content, please check your internet or refresh the page. If this error persists email toothpasteisverygood@gmail.com</h1>';
             });
     </script>
-</div>
+  </div>
+  
+ 
    
 <script>
   function showPage(pageId) {
